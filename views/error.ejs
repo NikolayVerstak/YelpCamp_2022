@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%> 
+<!-- request template calles boilerplate.ejs that adds elements <head> and <body>-->
+<div class="row">
+    <div class="col-6 offset-3"> <!-- make a grind and take 6 colomns from 12 and center everithing there-->
+        <div class="alert alert-danger" role="alert"> 
+            <h4 class="alert-heading"><%=err.message%></h4> <!-- show message whit stack for developer prodaction-->
+            <% if (process.env.NODE_ENV !== "production") { %> 
+                <p><%= err.stack %></p> <!-- we don't want to see all details about problems, so fro production environment ..-->
+            <% } %> 
+        </div>
+    </div>
+</div>
